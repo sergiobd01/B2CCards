@@ -37,9 +37,9 @@ public class CardController {
   	      value = "/registeCard",
   	      method = RequestMethod.POST,
   	      produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CardResponse> registerOrder(@RequestBody CardRequest orderRequest) {
+    public ResponseEntity<CardResponse> registerOrder(@RequestBody CardRequest cardRequest) {
 
-    	CreditCard card = new CreditCard(1L, orderRequest.getIdCustomer(), orderRequest.getNumberCard(), orderRequest.getCardType(), orderRequest.getExpirationMonth(), orderRequest.getExpirationYear());
+    	CreditCard card = new CreditCard(1L, cardRequest.getIdCustomer(), cardRequest.getNumberCard(), cardRequest.getCardType(), cardRequest.getExpirationMonth(), cardRequest.getExpirationYear());
     	         
     	CreditCard cardResult = new CreditCard();
     	CardResponse cardResponse = new CardResponse("", false);
