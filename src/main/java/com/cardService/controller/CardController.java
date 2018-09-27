@@ -1,18 +1,12 @@
 package com.cardService.controller;
 
-import java.util.Date;
-import java.util.List;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cardService.model.CreditCard;
@@ -39,16 +33,18 @@ public class CardController {
   	      produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<CardResponse> registerOrder(@RequestBody CardRequest cardRequest) {
 
-    	CreditCard card = new CreditCard(1L, cardRequest.getIdCustomer(), cardRequest.getNumberCard(), cardRequest.getCardType(), cardRequest.getExpirationMonth(), cardRequest.getExpirationYear());
+    	CreditCard card = new CreditCard(cardRequest.getIdCustomer(), cardRequest.getNumberCard(), cardRequest.getCardType(), cardRequest.getExpirationMonth(), cardRequest.getExpirationYear());
     	         
     	CreditCard cardResult = new CreditCard();
     	CardResponse cardResponse = new CardResponse("", false);
     	
         if(customerRepository.existsById(card.getIdCustomer()))
         {
-        	cardResult =  cardRepository.save(card);
-        	Customer customer = new Customer(card.getIdCustomer(), cardResult.getIdCard());
-        	customerRepository.save(customer);
+        	cardResult = cardRepository.save(card);
+        	
+        	Customer customerResult =  customerRepository.getOne(card.getIdCustomer());
+        	customerResult.setIdCard(card.getIdCard());
+        	customerRepository.save(customerResult);
         	
         	cardResponse.setMessage("Tarjeta Registrada");
         	cardResponse.setSuccess(true);
