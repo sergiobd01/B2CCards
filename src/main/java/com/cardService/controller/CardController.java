@@ -28,7 +28,7 @@ public class CardController {
 	CardRepository cardRepository;
 
     @RequestMapping(
-  	      value = "/registeCard",
+  	      value = "/registerCard",
   	      method = RequestMethod.POST,
   	      produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<CardResponse> registerOrder(@RequestBody CardRequest cardRequest) {
