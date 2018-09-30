@@ -20,13 +20,12 @@ public class Customer {
 
 	
 	@Column(name = "IDCARD")
-	@Nullable
-	private long idCard;
+	private Long idCard;
 	
 	public Customer() {
 	}
 
-	public Customer(Long idCustomer, long idCard) {
+	public Customer(Long idCustomer, Long idCard) {
 		this.idCustomer = idCustomer;
 		this.idCard = idCard;
 	}
@@ -43,7 +42,7 @@ public class Customer {
 		return idCard;
 	}
 
-	public void setIdCard(long idCard) {
+	public void setIdCard(Long idCard) {
 		this.idCard = idCard;
 	}
 	
