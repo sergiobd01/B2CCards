@@ -35,7 +35,7 @@ public class CreditCard {
 	
 	}
 
-	public CreditCard( long idCustomer, Long numberCard, String cardType, int expirationMonth, int expirationYear) {
+	public CreditCard( Long idCustomer, Long numberCard, String cardType, int expirationMonth, int expirationYear) {
 		//this.idCard = idCard;
 		this.idCustomer = idCustomer;
 		this.numberCard = numberCard;
@@ -44,19 +44,19 @@ public class CreditCard {
 		this.expirationYear = expirationYear;
 	}
 
-	public long getIdCard() {
+	public Long getIdCard() {
 		return idCard;
 	}
 
-	public void setIdCard(long idCard) {
+	public void setIdCard(Long idCard) {
 		this.idCard = idCard;
 	}
 
-	public long getIdCustomer() {
+	public Long getIdCustomer() {
 		return idCustomer;
 	}
 
-	public void setIdCustomer(long idCustomer) {
+	public void setIdCustomer(Long idCustomer) {
 		this.idCustomer = idCustomer;
 	}
 
