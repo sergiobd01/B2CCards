@@ -7,16 +7,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.lang.Nullable;
+
 @Entity
-@Table(name= "Customer")
+@Table(name= "CUSTOMER")
 public class Customer {
 	
 	@Id
 	@Column(name = "IDCUSTOMER")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idCustomer;
+
 	
 	@Column(name = "IDCARD")
+	@Nullable
 	private long idCard;
 	
 	public Customer() {

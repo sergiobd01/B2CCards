@@ -36,6 +36,7 @@ public class CreditCard {
 	}
 
 	public CreditCard( long idCustomer, String numberCard, String cardType, int expirationMonth, int expirationYear) {
+		//this.idCard = idCard;
 		this.idCustomer = idCustomer;
 		this.numberCard = numberCard;
 		this.cardType = cardType;

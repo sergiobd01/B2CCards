@@ -1,5 +1,6 @@
 package com.cardService.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -42,8 +43,9 @@ public class CardController {
         {
         	cardResult = cardRepository.save(card);
         	
-        	Customer customerResult =  customerRepository.getOne(card.getIdCustomer());
-        	customerResult.setIdCard(card.getIdCard());
+        	Customer customerResult = new Customer();
+            customerResult =  customerRepository.getOne(card.getIdCustomer());
+        	customerResult.setIdCard(cardResult.getIdCard());
         	customerRepository.save(customerResult);
         	
         	cardResponse.setMessage("Tarjeta Registrada");
