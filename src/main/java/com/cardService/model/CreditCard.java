@@ -14,13 +14,13 @@ public class CreditCard {
 	@Id
 	@Column(name = "IDCARD")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idCard;
+	private Long idCard;
 	
 	@Column(name = "IDCUSTOMER")
-	private long idCustomer;
+	private Long idCustomer;
 	
 	@Column(name = "NUMBERCARD")
-	private String numberCard;
+	private Long numberCard;
 
 	@Column(name = "CARDTYPE")
 	private String cardType;
@@ -35,7 +35,7 @@ public class CreditCard {
 	
 	}
 
-	public CreditCard( long idCustomer, String numberCard, String cardType, int expirationMonth, int expirationYear) {
+	public CreditCard( long idCustomer, Long numberCard, String cardType, int expirationMonth, int expirationYear) {
 		//this.idCard = idCard;
 		this.idCustomer = idCustomer;
 		this.numberCard = numberCard;
@@ -60,11 +60,11 @@ public class CreditCard {
 		this.idCustomer = idCustomer;
 	}
 
-	public String getNumberCard() {
+	public Long getNumberCard() {
 		return numberCard;
 	}
 
-	public void setNumberCard(String numberCard) {
+	public void setNumberCard(Long numberCard) {
 		this.numberCard = numberCard;
 	}
 

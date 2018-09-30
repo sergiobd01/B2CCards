@@ -5,7 +5,7 @@ public class CardRequest {
 
 	private Long idCustomer;
 
-	private String numberCard;
+	private Long numberCard;
 
 	private String cardType;
 	
@@ -38,11 +38,11 @@ public class CardRequest {
 		this.idCustomer = idCustomer;
 	}
 
-	public String getNumberCard() {
+	public Long getNumberCard() {
 		return numberCard;
 	}
 
-	public void setNumberCard(String numberCard) {
+	public void setNumberCard(Long numberCard) {
 		this.numberCard = numberCard;
 	}
 
